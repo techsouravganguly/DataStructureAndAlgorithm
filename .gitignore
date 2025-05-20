@@ -1,0 +1,13 @@
+# Exclude VSCode settings folder
+.vscode/
+
+# Exclude compiled C++ object files
+*.o
+
+# Exclude compiled C++ output executables (common conventions)
+*.out
+*.exe
+
+# (Optional) Exclude core dumps
+core
+
