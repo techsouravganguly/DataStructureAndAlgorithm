@@ -2,9 +2,11 @@
 using namespace std;
 
 void reverseArray(vector<int>&, int, int);
+bool isPalindrome(string, int);
 
 /*
-    Question: Reverse an array
+    Question 1: Reverse an array
+    Question 2: check palindrome.
 */
 
 void printArray(vector<int>& arr) {
@@ -21,6 +23,9 @@ int main() {
     printArray(arr);
     reverseArray(arr, left, right);
     printArray(arr);
+    string s = "madam";
+    cout << isPalindrome(s, 0) << endl;
+
 
 }
 
@@ -31,4 +36,12 @@ void reverseArray(vector<int>& arr, int left, int right) {
     arr[left] = arr[right];
     arr[right] = tmp;
     reverseArray(arr, left + 1, right - 1);
+}
+
+// Check for Palindrome for string
+bool isPalindrome(string s, int itr) {
+    if(itr >= s.size() / 2) return true;
+    if(s[itr] != s[s.size() - itr  - 1]) return false;
+    return isPalindrome(s, itr +  1);
+
 }
